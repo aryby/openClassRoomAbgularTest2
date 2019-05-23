@@ -1,0 +1,55 @@
+
+
+<nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-default">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">Accueil</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-default">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/posts']" >
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">posts</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/posts/new']" >
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">Nouveau post</span>
+          </a>
+        </li>
+
+      </ul>
+      <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item" *ngIf="!isAuth">
+            <a class="nav-link"  [routerLink]="['/register']">
+              <span class="nav-link-inner--text">Crée un compte</span>
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="!isAuth">
+            <a class="nav-link" [routerLink]="['/login']">
+              <span class="nav-link-inner--text">Se connecter</span>
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="isAuth">
+            <a class="nav-link" (click)="onSignOut()" style="cursor: pointer;">
+              <span class="nav-link-inner--text">Deconnecter</span>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>

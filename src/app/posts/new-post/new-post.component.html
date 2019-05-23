@@ -1,0 +1,33 @@
+<section class="section pb-0 section-components">      
+  <div class="py-5 bg-secondary">
+    <div class="container">
+      <!-- Inputs (alternative) -->
+      <div class="mb-3">
+        <small class="text-uppercase font-weight-bold">Nouveau Post</small>
+      </div>
+      <form [formGroup]="postForm" (ngSubmit)="onSavePost()">
+          <div class="form-group">
+            <input type="text" placeholder="Titre....." class="form-control form-control-alternative" formControlName="titre" />
+          </div>
+
+          <!-- <div class="form-group">
+            <input type="text" placeholder="Contenu......" class="form-control form-control-alternative" formControlName="contenu" />
+          </div> -->
+          
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Contenu : </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="contenu"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit" [disabled]="postForm.invalidate">Enregistrer</button>
+          </div>
+
+
+
+      </form>
+        
+        
+    </div>
+  </div>
+</section>
